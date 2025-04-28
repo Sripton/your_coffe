@@ -1,11 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./home.css";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 import group from "../../assets/Group.png";
-import cofe from "../../assets/category_Drink/cofe.png";
-import tea from "../../assets/category_Drink/tea.png";
-import milk from "../../assets/category_Drink/milk.png";
-import mors from "../../assets/category_Drink/mors.png";
 import espresso from "../../assets/ cofeCard/espresso.png";
 import espresso2x from "../../assets/ cofeCard/espresso2x.png";
 import americano from "../../assets/ cofeCard/americano.png";
@@ -14,10 +11,19 @@ import capuchino from "../../assets/ cofeCard/capuchino.png";
 import makiato from "../../assets/ cofeCard/makiato.png";
 
 export default function Home() {
+  const [categories, setCategories] = useState([]);
   const [chooseCategory, setChooseCategory] = useState(false);
-  const chooseCategoryHandler = () => {
+  const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(0);
+  const chooseCategoryHandler = (index) => {
     setChooseCategory(!chooseCategory);
+    setSelectedCategoryIndex(index);
   };
+  useEffect(() => {
+    axios
+      .get("http://localhost:3002/api/categories")
+      .then((response) => setCategories(response.data))
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <div className="wrapper">
       <div className="header">
@@ -36,22 +42,19 @@ export default function Home() {
       </div>
       <div className="content">
         <div className="categories">
-          <button type="button" className="category">
-            <img src={cofe} alt="cofe" />
-            <p> Кофе</p>
-          </button>
-          <button type="button" className="category">
-            <img src={tea} alt="tea" />
-            <p>Чай</p>
-          </button>
-          <button type="button" className="category">
-            <img src={milk} alt="milkcoktail" />
-            <p>Молочные коктейли</p>
-          </button>
-          <button type="button" className="category">
-            <img src={mors} alt="mors" />
-            <p>Морсы и газ. напитки </p>
-          </button>
+          {categories.map((category, index) => (
+            <button
+              key={category.id}
+              type="button"
+              className={`category ${
+                selectedCategoryIndex === index ? "choose" : ""
+              }`}
+              onClick={() => chooseCategoryHandler(index)}
+            >
+              <img src={`/category_Drink/${category.img}`} alt={category.alt} />
+              <p>{category.title}</p>
+            </button>
+          ))}
         </div>
 
         <div className="coffee-title">
