@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.wrapper {
+  min-width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  background: #f5d000;
+}
+.header-title {
+  font-size: 64px;
+  font-family: Tinos;
+}
+.block {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+}
+.login-btn {
+  background: white;
+  padding: 10px 10px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 60px;
+  cursor: pointer;
+}
+.login-btn > img {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  right: 10px;
+  cursor: pointer;
+}
+.login-btn .login {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Tinos;
+}
+.login {
+  text-decoration: none;
+  cursor: pointer;
+}
+.content {
+  background: white;
+  border-radius: 30px 30px 0 0;
+  padding: 30px;
+}
+.categories {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  padding: 10px;
+  border-radius: 15px;
+  margin-right: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+  font-size: 20px;
+  font-family: Tinos;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+}
+.category.choose {
+  background-color: rgb(220, 219, 219);
+}
+.category:last-child {
+  margin-right: 0;
+}
+.category img {
+  z-index: 1;
+}
+
+.category:hover {
+  transform: translateY(-4px);
+}
+.category:active {
+  transform: translateY(0);
+}
+.category.inactive img {
+  filter: grayscale(1);
+}
+.coffee-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.coffee-title p {
+  font-size: 50px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.coffee-title span {
+  width: 70px;
+  height: 70px;
+  background: #f5d000;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  left: 30px;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card {
+  width: calc(33% - 9px);
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card:active {
+  transform: translateY(0);
+}
+
+.badge {
+  position: absolute;
+  top: 90px;
+  right: 190px;
+  background: #ffd700;
+  padding: 15px 20px;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+}
+.price {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+@media (max-width: 1354px) {
+  .card {
+    width: calc(50% - 20px);
+    margin: 0 auto;
+    left: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .category {
+    padding: 8px;
+    width: 180px;
+    margin-right: 15px;
+    text-align: center;
+  }
+
+  .card {
+    width: calc(50% - 20px);
+    margin: 0 auto;
+    left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .category {
+    padding: 6px;
+    width: 140px;
+    margin-right: 10px;
+    text-align: center;
+  }
+
+  .card {
+    width: 100%;
+    margin: 0 auto;
+    left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .header-title {
+    font-size: 36px;
+  }
+
+  .login-btn {
+    height: 50px;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .login-btn > img {
+    width: 40px;
+    height: 40px;
+    right: 5px;
+  }
+
+  .login-btn .login {
+    font-size: 14px;
+  }
+
+  .category {
+    width: 100px;
+    margin-right: 10px;
+    font-size: 16px;
+  }
+
+  .coffee-title p {
+    font-size: 30px;
+  }
+
+  .coffee-title span {
+    width: 40px;
+    height: 40px;
+    left: 15px;
+  }
+
+  .card {
+    width: 100%;
+    left: 0;
+    font-size: 20px;
+    padding: 15px;
+  }
+
+  .badge {
+    top: 60px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 18px;
+  }
+
+  .price {
+    font-size: 28px;
+  }
+
+  .categories {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .grid {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

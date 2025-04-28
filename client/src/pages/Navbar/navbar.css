@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar {
+  width: 100%;
+  height: 100vh;
+  background-color: #e8c40f;
+}
+.promo {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, #ffd600, 60%, #fff 90%);
+  overflow: hidden;
+}
+.cup-left {
+  position: absolute;
+  right: 2px;
+  top: 240px;
+  width: 800px;
+}
+.cup-right {
+  position: absolute;
+  left: 2px;
+  bottom: 2px;
+  width: 600px;
+  z-index: 3;
+}
+
+.bean-1 {
+  position: absolute;
+  right: 200px;
+  top: 20px;
+}
+.bean-2 {
+  position: absolute;
+  left: 100px;
+  bottom: 400px;
+  z-index: 1;
+}
+.bean-3 {
+  position: absolute;
+  left: 100px;
+  top: 50px;
+}
+.bean-4 {
+  position: absolute;
+  right: 100px;
+  top: 200px;
+}
+.bean-5 {
+  position: absolute;
+  right: 500px;
+}
+
+.text {
+  position: absolute;
+  left: 40%;
+  top: 100px;
+  font-size: 9rem;
+  color: black;
+  line-height: 1.1;
+  font-family: Tinos;
+  z-index: 2;
+}
+.touch-link {
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  position: absolute;
+  right: 110px;
+  bottom: -200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: 0.3s all;
+}
+.touch-link:hover {
+  transform: translateY(-3px);
+}
+.touch-link:active {
+  transform: translateY(0);
+}
+.touch-text {
+  position: absolute;
+  right: 40px;
+  bottom: 200px;
+  font-size: 5rem;
+  color: black;
+  line-height: 1.1;
+  font-family: Tinos;
+}
+/* Планшеты (до 1024px)*/
+@media (max-width: 1024px) {
+  .text {
+    font-size: 8rem;
+    left: 15%;
+    top: 100px;
+  }
+  .touch-text {
+    font-size: 3rem;
+    bottom: 190px;
+    right: 80px;
+  }
+  .touch-link {
+    width: 400px;
+    height: 400px;
+    right: 50px;
+    bottom: -50px;
+  }
+  .cup-left {
+    top: 270px;
+    width: 600px;
+  }
+  .cup-right {
+    width: 400px;
+  }
+  .bean-1 {
+    width: 70px;
+    top: 50px;
+  }
+  .bean-2 {
+    width: 150px;
+    bottom: 300px;
+    left: 100px;
+    z-index: 1;
+  }
+  .bean-3 {
+    left: 100px;
+    top: 300px;
+  }
+  .bean-4 {
+    right: 100px;
+    top: 200px;
+    width: 80px;
+  }
+  .bean-5 {
+    left: 40px;
+    top: 500px;
+    z-index: 2;
+    width: 100px;
+  }
+}
+@media (max-width: 768px) {
+  .text {
+    font-size: 7rem;
+    left: 7%;
+    top: 300px;
+  }
+  .cup-left {
+    top: 200px;
+    width: 600px;
+  }
+  .bean-3 {
+    left: 100px;
+    top: 100px;
+  }
+  .bean-5 {
+    left: 280px;
+    top: 150px;
+    z-index: 2;
+    width: 100px;
+  }
+  .touch-link {
+    width: 400px;
+    height: 400px;
+    right: 50px;
+    bottom: -180px;
+  }
+}
+@media (max-width: 480px) {
+  .text {
+    font-size: 6rem;
+    left: 7%;
+    top: 300px;
+  }
+  .touch-text {
+    font-size: 2rem;
+    bottom: 190px;
+    right: 80px;
+  }
+  .cup-left {
+    top: 200px;
+    width: 370px;
+  }
+  .cup-right {
+    width: 300px;
+  }
+
+  .bean-1 {
+    width: 70px;
+    top: 50px;
+    left: 300px;
+  }
+  .bean-2 {
+    width: 100px;
+    bottom: 200px;
+    left: 100px;
+    z-index: 1;
+  }
+  .bean-3 {
+    left: 50px;
+    top: 50px;
+  }
+  .bean-4 {
+    left: 380px;
+    top: 170px;
+    width: 60px;
+  }
+  .bean-5 {
+    left: 140px;
+    top: 100px;
+    z-index: 2;
+    width: 80px;
+  }
+  .touch-link {
+    width: 400px;
+    height: 400px;
+    right: -60px;
+    bottom: -180px;
+  }
+}
+
